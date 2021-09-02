@@ -1,18 +1,20 @@
 <template>
   <h1>Titulo Contador: {{contador}}</h1>
-  <h1>Titulo Contador: {{signopeso}}</h1>
+  <h1 :style="{'color':color}">Titulo Contador: {{signopeso}}</h1>
 
 </template>
 
 <script>
 import { computed } from '@vue/reactivity'
 export default {
-props:['contador'],
+props:['contador','color'],
 
-setup(){
+setup(props){
     const signopeso = computed(() =>{
-        return '$' + contador.value
+        return '$' + props.contador
     })
+
+    return {signopeso}
 }
 // computed:{
 //     signopeso(){

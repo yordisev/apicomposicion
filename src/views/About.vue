@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <Titulo :contador="contador"/>
+    <Titulo :contador="contador" :color="color"/>
 
     <h1 :style="{'color':color}">contador: {{contador}}</h1>
     <button @click="aumentar">+</button>
