@@ -1,34 +1,47 @@
 <template>
   <h1>Paises de Todo el Mundo</h1>
   <p v-for="(pais, index) in ArrayPaises" :key="index">
-      {{pais.name}} - {{pais.capital}} - {{pais.region}} - {{pais.population}}
+      <router-link :to="`/paises/${pais.name}`">
+        {{pais.name}}
+      </router-link>
   </p>
 </template>
 
 <script>
-import { ref } from '@vue/reactivity'
+// import { ref } from '@vue/reactivity'
+
+import {useFetch} from '../hooks/fetchData'
 export default {
     setup(){
-        const ArrayPaises = ref([]);
+    return {...useFetch('api.json')}
 
-        const fetchArray = async() =>{
-            try {
-                // const respuesta = await fetch('https://restcountries.eu/rest/v2/all')
-                const respuesta = await fetch('api.json')
+        // const ArrayPaises = ref([]);
 
-                ArrayPaises.value = await respuesta.json()
+        // const fetchArray = async() =>{
+        //     try {
+        //         // const respuesta = await fetch('https://restcountries.eu/rest/v2/all')
+        //         const respuesta = await fetch('api.json')
 
-                console.log(ArrayPaises.value)
-            } catch (error) {
-                console.log(error)
-            }
-        }
+        //         ArrayPaises.value = await respuesta.json()
 
-        fetchArray()
+        //         console.log(ArrayPaises.value)
+        //     } catch (error) {
+        //         console.log(error)
+        //     }
+        // }
 
-        return{ArrayPaises}
+        // fetchArray()
+
+        // return{ArrayPaises}
     }
 }
+
+// import {fetchData} from '../hooks/fetchData'
+// export default {
+//     setup(){
+//         return {...fetchData('api.json')}
+//     }
+// }
 </script>
 
 <style>
