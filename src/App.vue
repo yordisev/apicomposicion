@@ -4,6 +4,7 @@
     <router-link to="/about">About</router-link> |
     <router-link to="/titulo">Titulo</router-link> |
     <router-link to="/contador">Contador</router-link> |
+    <router-link to="/paises">Paises</router-link> |
   </div>
   <router-view/>
 </template>

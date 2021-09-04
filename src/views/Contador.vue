@@ -12,6 +12,8 @@ export default {
 Btn
   },
     setup(){
+      // const {contador,aumentar,disminuir} = useContador()
+      // return {contador,aumentar,disminuir}
         return {...useContador()}
     }
 }
