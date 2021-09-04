@@ -1,7 +1,7 @@
 <template>
   <h1>Titulo Contador: {{contador}}</h1>
   <h1 :style="{'color':color}">Titulo Contador: {{signopeso}}</h1>
-
+<h2>Titulo</h2>
 </template>
 
 <script>
